@@ -1,5 +1,8 @@
 name: Build dlc.dat
 on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 2 * * *"
   push:
     branches:
       - master
@@ -20,7 +23,7 @@ jobs:
         run: |
           echo "RELEASE_NAME=$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
           echo "TAG_NAME=$(date +%Y%m%d%H%M%S)" >> $GITHUB_ENV
-          echo "REPO_URL=github.com/${{ github.repository }}" >> $GITHUB_ENV
+          echo "REPO_URL=github.com/v2fly/domain-list-community" >> $GITHUB_ENV
           echo "GOPATH=$(dirname $GITHUB_WORKSPACE)" >> $GITHUB_ENV
           echo "$(dirname $GITHUB_WORKSPACE)/bin" >> $GITHUB_PATH
         shell: bash
@@ -31,7 +34,7 @@ jobs:
 
       - name: Build dlc.dat file
         run: |
-          domain-list-community --datapath=${{ env.GOPATH }}/src/${{ env.REPO_URL }}/data --exportlists=category-ads-all,tld-cn,cn,tld-\!cn,geolocation-\!cn,apple,icloud
+          domain-list-community --datapath=${{ env.GOPATH }}/src/${{ env.REPO_URL }}/data --exportlists=geolocation-cn,category-scholar-cn,category-scholar-\!cn,category-anticensorship,category-dev,category-entertainment,category-media,category-orgs,category-porn,category-vpnservices,discord,github,google,lihkg,microsoft,pincong,signal,speedtest,telegram,twitter
 
       - name: Generate dlc.dat sha256 hash
         run: |
