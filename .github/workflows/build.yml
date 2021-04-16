@@ -1,5 +1,8 @@
 name: Build dlc.dat
 on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 2 * * *"
   push:
     branches:
       - master
@@ -14,6 +17,7 @@ jobs:
       - name: Checkout codebase
         uses: actions/checkout@v4
         with:
+          repository: 'v2fly/domain-list-community'
           path: code
 
       - name: Setup Go
@@ -30,7 +34,7 @@ jobs:
       - name: Build dlc.dat file
         run: |
           cd code || exit 1
-          go run ./ --outputdir=../ --exportlists=category-ads-all,tld-cn,cn,tld-\!cn,geolocation-\!cn,apple,icloud
+          go run ./ --outputdir=../ --exportlists=geolocation-cn,category-scholar-cn,category-scholar-\!cn,category-anticensorship,category-dev,category-ecommerce,category-entertainment,category-forums,category-media,category-orgs,category-porn,category-vpnservices,discord,github,google,microsoft,signal,speedtest,telegram,twitter
           cd ../ && rm -rf code
 
       - name: Generate dlc.dat sha256 hash
