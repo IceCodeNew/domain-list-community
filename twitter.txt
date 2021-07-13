@@ -1,0 +1,16 @@
+domain:ads-twitter.com
+domain:periscope.tv
+domain:pscp.tv
+domain:t.co
+domain:tellapart.com
+domain:tweetdeck.com
+domain:twimg.com
+domain:twitpic.com
+domain:twitter.com
+domain:twitter.jp
+domain:twitterinc.com
+domain:twitteroauth.com
+domain:twitterstat.us
+domain:twtrdns.net
+domain:twttr.com
+domain:vine.co

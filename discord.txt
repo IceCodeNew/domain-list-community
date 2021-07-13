@@ -1,0 +1,10 @@
+domain:discord.co
+domain:discord.com
+domain:discord.gg
+domain:discord.gift
+domain:discord.gifts
+domain:discord.media
+domain:discord.new
+domain:discordapp.com
+domain:discordapp.net
+domain:discordstatus.com

@@ -1,0 +1,11 @@
+domain:csdl.ac.cn
+domain:las.ac.cn
+domain:cnki.net
+domain:wanfangdata.com.cn
+domain:wf.pub
+domain:apabi.com
+domain:cnthinkers.com
+domain:cqvip.com
+domain:er07.com
+domain:ersjk.com
+domain:sbsjk.com
